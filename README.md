@@ -1,6 +1,4 @@
-DocBlock: It should be easy,should be quick, intuitative and beautiful. Why build your brief in word when you can code ? Keep your code fundamentals active and have fun. Always up for 
-
-improvement.. clean concise code and simplicity is the aim. 
+DocBlock: It should be easy,should be quick, intuitative and beautiful. Why build your brief in word when you can code ? Keep your code fundamentals active and have fun. Always up for improvement.. clean concise code and simplicity is the aim. 
 
 Contributors:
 Joseph Hunter joe.hunter.studio@gmail.com
