@@ -32,6 +32,7 @@ Plugins (Glossary Plugin, Dynamic Menu Plugin, Email Plugin)
 Bootstrap Version ¿? Material Version 
 
 Change Log:
- V.2.2.0/5
+ V.2.2.0/5 
+  Branch:js-integration
   Add in js/jquery support
   Add in scripts support support

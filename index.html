@@ -8,9 +8,6 @@
 body {
 	font-family: 'Lato', sans-serif;
 }
-ul li a {
-	font-size: 0.7vw;
-}
 .project-name {
 	text-align:center;
 }
@@ -24,6 +21,13 @@ h2 {
 	border-width: 2px 10px 4px 20px;
 	border-color:rgba(0, 0, 0, 0.1);
 	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.doc-block .doc-block {
+	margin:1%;
+	padding:1%;
+	box-shadow:0;
+	border:0px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 4px 0 rgba(0, 0, 0, 0.19);
 }
 /*Block Backgrounds*/
 .primary {
@@ -72,6 +76,16 @@ h2 {
 	list-style-type: none;
 	border: none;
 }
+/*Glossary*/
+ul.glossary li a.term {
+	font-weight:bold;
+	text-decoration:underline;
+	size:0.2em;
+}
+.termed {
+	font-weight:bold;
+	border-bottom: 3px double;
+}
 </style>
 </head>
 
@@ -81,8 +95,8 @@ h2 {
 <div class="doc-block">
   <ul class="offset-right no-list smaller">
     <li><span>Internal  Id:<strong> 2.0.4</strong></span></li>
-    <li>Start Date: 13-09-2017 <a href="link"> </a></li>
-    <li>Due Date: <a href="link"> </a> 13-09-2017</li>
+    <li>Start Date: 13-09-2017</a></li>
+    <li>Due Date:  13-09-2017</li>
   </ul>
   <ul>
     <li>Live:</li>
@@ -93,7 +107,7 @@ h2 {
 <div class="doc-block">
   <h2 id="Resources"><a id="Brief">Brief:</a></h2>
   <blockquote>
-    <p>The main aim of this is to provide a format for beatifully quick and easy documentation</p>
+    <p>The main aim of this is to provide a format for beatifully quick and easy documentation. Great for build ing a great Website Brief or project brief</p>
   </blockquote>
 </div>
 <div class="doc-block primary">
@@ -126,5 +140,44 @@ h2 {
     </ul>
   </div>
 </div>
+<!---glossary--->
+<!--/*
+  Heres a glossary block. Reads through your documenatation and highlights terms in the glossary list
+  Fill in (ul li a.term) glossary term and the dynamicGlossary function cleverly highlights where ever this instance is found in your text.  
+*/--->
+<div class="doc-block">
+  <h2 id="Glossary"><a id="Glossary">Glossary:</a></h2>
+  <ul class="glossary">
+    <li><a class="term">Website Brief</a>: Your brief is a business plan for your webpage. The more information you can provide upfront, the better equipped we are to deliver an  efficient and successful website that satisfies your vision. </li>
+  </ul>
+</div>
+<!---.glossary--->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script> 
+<script type="text/javascript">
+
+function dynamicGlossary(){ 
+	var termsFoundArray = $('li a.term').map(function(){
+				   $(this).attr("id",$(this).text());
+				   return $.trim($(this).text());
+	}).get();
+
+	termsFoundArray.forEach(function(term) {
+  		
+	 var stringReplacement = "<a href='#"+term+"'><span class='termed'>"+term+"</span></a>";
+		  			
+		$("p:contains('"+term+"')").html(function(_, html) {
+			   return html.split(term).join(stringReplacement);
+		});
+			 
+ 		$("p:not([.codeblock]:contains('"+term+"')").html(function(_, html) {
+				   return html.split(term).join(stringReplacement);
+		});
+		
+	});
+}
+
+dynamicGlossary();
+
+</script>
 </body>
 </html>
