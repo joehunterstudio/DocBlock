@@ -13,6 +13,7 @@ Structure:
 	 Anchors
 
 To Does:
+
 Add styling for important element
 Add in standardized <!-html style open/closed comments for each separate block-> <--!/----> ?
 Implement revised color scheme following default -> sucess web principals
@@ -29,3 +30,8 @@ Custom 12 column layout ?
 Dynamic Menu
 Plugins (Glossary Plugin, Dynamic Menu Plugin, Email Plugin)
 Bootstrap Version ¿? Material Version 
+
+Change Log:
+ V.2.2.0/5
+  Add in js/jquery support
+  Add in scripts support support

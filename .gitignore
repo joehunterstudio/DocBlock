@@ -1,4 +1,6 @@
 .sql
-_dev/
 .zip
 .gzip
+
+_dev/
+distro/versions/
