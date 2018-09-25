@@ -88,7 +88,6 @@ ul.glossary li a.term {
 }
 </style>
 </head>
-
 <body>
 <a id="top"></a>
 <h1 class="project-name">Project Name</h1>
@@ -120,7 +119,7 @@ ul.glossary li a.term {
 <div class="doc-block warning">
   <h2 id="Questions"><a id="Questions">Questions:</a></h2>
   <ul>
-    <li>What is this area for ? -&gt; <br />
+    <li>What is this area for ? <br />
       <em>This is list for for questions + answers</em></li>
   </ul>
 </div>
@@ -155,26 +154,25 @@ ul.glossary li a.term {
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script> 
 <script type="text/javascript">
 
-function dynamicGlossary(){ 
-	var termsFoundArray = $('li a.term').map(function(){
-				   $(this).attr("id",$(this).text());
-				   return $.trim($(this).text());
-	}).get();
-
-	termsFoundArray.forEach(function(term) {
-  		
-	 var stringReplacement = "<a href='#"+term+"'><span class='termed'>"+term+"</span></a>";
-		  			
-		$("p:contains('"+term+"')").html(function(_, html) {
-			   return html.split(term).join(stringReplacement);
-		});
-			 
- 		$("p:not([.codeblock]:contains('"+term+"')").html(function(_, html) {
+	function dynamicGlossary(){ 
+		var termsFoundArray = $('li a.term').map(function(){
+					   $(this).attr("id",$(this).text());
+					   return $.trim($(this).text());
+		}).get();
+	
+		termsFoundArray.forEach(function(term) {
+		 var stringReplacement = "<a href='#"+term+"'><span class='termed'>"+term+"</span></a>";
+						
+			$("p:contains('"+term+"')").html(function(_, html) {
 				   return html.split(term).join(stringReplacement);
+			});
+				 
+			$("p:not([.codeblock]:contains('"+term+"')").html(function(_, html) {
+					   return html.split(term).join(stringReplacement);
+			});
+			
 		});
-		
-	});
-}
+	}
 
 dynamicGlossary();
 
