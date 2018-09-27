@@ -4,88 +4,88 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Your Website Brief + Documentation</title>
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-<style>
-body {
-	font-family: 'Lato', sans-serif;
-}
-.project-name {
-	text-align:center;
-}
-h2 {
-	margin-top:0.3em;
-}
-.doc-block {
-	margin:1%;
-	padding:1%;
-	border-style: solid;
-	border-width: 2px 10px 4px 20px;
-	border-color:rgba(0, 0, 0, 0.1);
-	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.doc-block .doc-block {
-	margin:1%;
-	padding:1%;
-	box-shadow:0;
-	border:0px;
-	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 4px 0 rgba(0, 0, 0, 0.19);
-}
-/*Block Backgrounds*/
-.primary {
-	background-color:#e6ffff;
-}
-.warning {
-	background-color:rgba(120, 0, 0, 0.2);
-	background-color:#fff2e6;
-}
-.default {
-	background-color:rgb(242, 242, 242, 0, 2);
-}
-.not-relevant {
-	color: rgba(255, 255, 255, 0.5);
-}
-.completed {
-	color: green;
-	text-decoration: line-through;
-}
-.question {
-	color: yellow;
-	text-decoration: line-through;
-}
-.no-list {
-	list-style:none;
-	text-transform:capitalize;
-}
-.smaller {
-	font-size:0.8em;
-}
-.scrap img {
-	margin:1%;
-	padding:1%;
-	max-height:200px;
-	width:auto;
-}
-.offset-right {
-	float:right;
-}
-.codeblock {
-	display: block;
-	font-family: monospace;
-	white-space: pre;
-	margin: 1em 0;
-	background-color:#E8E8E8;
-	list-style-type: none;
-	border: none;
-}
-/*Glossary*/
-ul.glossary li a.term {
-	font-weight:bold;
-	text-decoration:underline;
-	size:0.2em;
-}
-.termed {
-	font-weight:bold;
-	border-bottom: 3px double;
-}
+	<style>
+	body {
+		font-family: 'Lato', sans-serif;
+	}
+	.project-name {
+		text-align:center;
+	}
+	h2 {
+		margin-top:0.3em;
+	}
+	.doc-block {
+		margin:1%;
+		padding:1%;
+		border-style: solid;
+		border-width: 2px 10px 4px 20px;
+		border-color:rgba(0, 0, 0, 0.1);
+		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+	.doc-block .doc-block {
+		margin:1%;
+		padding:1%;
+		box-shadow:0;
+		border:0px;
+		box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 4px 0 rgba(0, 0, 0, 0.19);
+	}
+	/*Block Backgrounds*/
+	.primary {
+		background-color:#e6ffff;
+	}
+	.warning {
+		background-color:rgba(120, 0, 0, 0.2);
+		background-color:#fff2e6;
+	}
+	.default {
+		background-color:rgb(242, 242, 242, 0, 2);
+	}
+	.not-relevant {
+		color: rgba(255, 255, 255, 0.5);
+	}
+	.completed {
+		color: green;
+		text-decoration: line-through;
+	}
+	.question {
+		color: yellow;
+		text-decoration: line-through;
+	}
+	.no-list {
+		list-style:none;
+		text-transform:capitalize;
+	}
+	.smaller {
+		font-size:0.8em;
+	}
+	.scrap img {
+		margin:1%;
+		padding:1%;
+		max-height:200px;
+		width:auto;
+	}
+	.offset-right {
+		float:right;
+	}
+	.codeblock {
+		display: block;
+		font-family: monospace;
+		white-space: pre;
+		margin: 1em 0;
+		background-color:#E8E8E8;
+		list-style-type: none;
+		border: none;
+	}
+	/*Glossary*/
+	ul.glossary li a.term {
+		font-weight:bold;
+		text-decoration:underline;
+		size:0.2em;
+	}
+	.termed {
+		font-weight:bold;
+		border-bottom: 3px double;
+	}
 </style>
 </head>
 <body>
@@ -139,18 +139,18 @@ ul.glossary li a.term {
     </ul>
   </div>
 </div>
-<!---glossary--->
 <!--/*
   Heres a glossary block. Reads through your documenatation and highlights terms in the glossary list
   Fill in (ul li a.term) glossary term and the dynamicGlossary function cleverly highlights where ever this instance is found in your text.  
 */--->
+<!---glossary--->
 <div class="doc-block">
   <h2 id="Glossary"><a id="Glossary">Glossary:</a></h2>
   <ul class="glossary">
     <li><a class="term">Website Brief</a>: Your brief is a business plan for your webpage. The more information you can provide upfront, the better equipped we are to deliver an  efficient and successful website that satisfies your vision. </li>
   </ul>
 </div>
-<!---.glossary--->
+<!---./glossary--->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script> 
 <script type="text/javascript">
 
@@ -170,7 +170,6 @@ ul.glossary li a.term {
 			$("p:not([.codeblock]:contains('"+term+"')").html(function(_, html) {
 					   return html.split(term).join(stringReplacement);
 			});
-			
 		});
 	}
 
